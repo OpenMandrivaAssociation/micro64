@@ -1,5 +1,11 @@
+# Emulator is close-sourced and there is no debug info
+# so we just disable empty debug package
+
+%define _enable_debug_packages %{nil}
+%define debug_package %{nil}
+
 Name:		micro64
-Version:	0.0.655
+Version:	1.00.666
 Release:	%mkrel 1
 Summary:	Aimed to become the most accurate C64 Emulator
 License:	Freeware
@@ -7,7 +13,6 @@ Group:		Emulators
 URL:		http://micro64.de/
 Source0:	http://micro64.de/downloads/%{name}-%{version}.zip
 Source1:	micro64.png
-BuildRoot:	%{_tmppath}/%{oname}-%{version}-%{release}-buildroot
 
 %description
 The highly advanced successor of brotkaestchen (fr-051) from BeRo / farbrausch.
@@ -33,7 +38,7 @@ pre-release. Test stuff. Report bugs. New builds will appear from time to time.
 %__rm -rf %{buildroot}
 
 %__mkdir_p %{buildroot}%{_datadir}/applications
-cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
+%__cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Name=Micro64
 Comment=C64 emulator
@@ -50,16 +55,15 @@ EOF
 
 %__mkdir_p %{buildroot}%{_bindir}
 %ifarch x86_64
-%__install -m 755 %{name}_64 %{buildroot}%{_bindir}/%{name}
+%__install -m 755 x86_64-linux/%{name} %{buildroot}%{_bindir}/%{name}
 %else
-%__install -m 755 %{name} %{buildroot}%{_bindir}/%{name}
+%__install -m 755 x86_32-linux/%{name} %{buildroot}%{_bindir}/%{name}
 %endif
 
 %clean
 %__rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root)
 %{_bindir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
 %{_datadir}/pixmaps/%{name}.png

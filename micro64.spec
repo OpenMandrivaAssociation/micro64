@@ -5,7 +5,7 @@
 %define debug_package %{nil}
 
 Name:		micro64
-Version:	1.00.666
+Version:	1.00.667
 Release:	%mkrel 1
 Summary:	Aimed to become the most accurate C64 Emulator
 License:	Freeware

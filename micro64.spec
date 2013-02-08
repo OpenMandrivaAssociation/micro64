@@ -6,7 +6,7 @@
 
 Name:		micro64
 Version:	1.00.667
-Release:	%mkrel 1
+Release:	2
 Summary:	Aimed to become the most accurate C64 Emulator
 License:	Freeware
 Group:		Emulators
@@ -17,7 +17,8 @@ Source1:	micro64.png
 %description
 The highly advanced successor of brotkaestchen (fr-051) from BeRo / farbrausch.
 
-Currently it has 2 different VIC II emulation modes (both are half-cycle exact):
+Currently it has 2 different VIC II emulation modes (both are half-cycle
+exact):
 - single pixel dot clock exact (very accurate, slow)
 - dynamic pixel block-wise (quite fast, even on slower machines).
 
@@ -67,4 +68,19 @@ EOF
 %{_bindir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
 %{_datadir}/pixmaps/%{name}.png
+
+
+
+%changelog
+* Sun May 27 2012 Andrey Bondrov <abondrov@mandriva.org> 1.00.667-1mdv2012.0
++ Revision: 800818
+- New version 1.00.667
+
+* Thu Mar 22 2012 Andrey Bondrov <abondrov@mandriva.org> 1.00.666-1
++ Revision: 785980
+- New version 1.00.666
+
+* Sun Dec 18 2011 Andrey Bondrov <abondrov@mandriva.org> 0.0.655-1
++ Revision: 743428
+- imported package micro64
 

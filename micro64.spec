@@ -6,7 +6,7 @@
 
 Name:		micro64
 Version:	1.00.667
-Release:	2
+Release:	3
 Summary:	Aimed to become the most accurate C64 Emulator
 License:	Freeware
 Group:		Emulators

@@ -10,7 +10,7 @@ Release:	4
 Summary:	Aimed to become the most accurate C64 Emulator
 License:	Freeware
 Group:		Emulators
-URL:		http://micro64.de/
+URL:		https://micro64.de/
 Source0:	http://micro64.de/downloads/%{name}-%{version}.zip
 Source1:	micro64.png
 
